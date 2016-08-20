@@ -335,8 +335,12 @@ class IMAP
         tried        = []
         capability   = @conn.capability
 
-        ['XOAUTH2', 'LOGIN', 'CRAM-MD5'].each do |method|
-          auth_methods << method if capability.include?("AUTH=#{method}")
+        if capability.include?("AUTH=XOAUTH2") then
+          auth_methods << "XOAUTH2"
+        else
+          ['LOGIN', 'CRAM-MD5'].each do |method|
+            auth_methods << method if capability.include?("AUTH=#{method}")
+          end
         end
 
         begin
@@ -348,7 +352,10 @@ class IMAP
             @conn.login(username, password)
           elsif method == 'XOAUTH2'
             require 'gmail_xoauth'
-            @conn.authenticate(method, username, Larch::GoogleAuth.instance.access_token)
+            token = Larch::GoogleAuth.instance.access_token
+            unless token.nil?
+              @conn.authenticate(method, username, token)
+            end
           else
             @conn.authenticate(method, username, password)
           end
