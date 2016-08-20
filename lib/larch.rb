@@ -13,6 +13,7 @@ require 'larch/monkeypatch/net/imap'
 
 require 'larch/config'
 require 'larch/errors'
+require 'larch/googleauth'
 require 'larch/imap'
 require 'larch/imap/mailbox'
 require 'larch/logger'
