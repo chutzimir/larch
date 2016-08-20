@@ -1,6 +1,6 @@
 module Larch
   APP_NAME      = 'Larch'
-  APP_VERSION   = '1.1.2'
+  APP_VERSION   = '1.1.2.dev'
   APP_AUTHOR    = 'Ryan Grove'
   APP_EMAIL     = 'ryan@wonko.com'
   APP_URL       = 'https://github.com/rgrove/larch/'

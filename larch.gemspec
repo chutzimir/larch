@@ -20,6 +20,10 @@ Gem::Specification.new do |s|
   s.add_dependency('sqlite3',    '~> 1.3')
   s.add_dependency('trollop',    '~> 1.13')
 
+  # For Google Authentication
+  s.add_dependency('googleauth',   '~> 0.5.1')
+  s.add_dependency('gmail_xoauth', '~> 0.4.1')
+
   s.files = [
     'HISTORY',
     'LICENSE',

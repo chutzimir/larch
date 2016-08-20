@@ -1,6 +1,9 @@
 Larch History
 ================================================================================
 
+In development:
+  * OAuth 2.0 support for Gmail
+
 Version 1.1.2 (2013-01-24)
   * Fixed an issue in which a folder containing only one message would not be
     copied.
