@@ -34,6 +34,9 @@ module Larch; class GoogleAuth
   end
 
   def access_token
+    if @credentials.expired? then
+      @credentials.refresh!
+    end
     @credentials.access_token
   end
 
